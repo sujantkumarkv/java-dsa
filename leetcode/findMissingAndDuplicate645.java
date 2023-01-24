@@ -29,11 +29,19 @@ public class findMissingAndDuplicate645 {
         //loop for the missing number & duplicate
         for (int j = 0; j < N; j++) {
             if(arr[j] != (j+1)){
-                int correct= arr[j]-1;
-                if(arr[j] == arr[correct])
-                    ans[0]= arr[j];
-                
-                ans[1]= (j+1);
+                /**
+                 * Since the Qn has said about ONLY ONE NUMBER BEING REPEATED AT THE EXPENDSE OF 
+                 * ONE MISSING NUMBER, SO WHEN arr[j] != (j+1),
+                j+1 is the missing number BUT ALSO arr[j] is DEFINITELY the duplicate no. bcz
+                 * all others must be in correct postitions, therefore
+                no need to check for correct index & if it's repeating. 
+
+                 int correct= arr[j]-1;
+                 if(arr[j] == arr[correct])
+                    ans[0]= arr[j];//adding duplicate first as per Qn
+                 */
+                ans[0]= arr[j];//adding duplicate first as per Qn
+                ans[1]= (j+1);//adding missing number
             }       
         }
         return ans;        
