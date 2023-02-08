@@ -4,9 +4,10 @@ public class ArraySorting {
  
     public static void main(String[] args) {
         int[] arr= {5, 4, 3, 1, 2};
-        CyclicSort(arr);
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(MergeSort(arr)));
     }
+
+
     static void swap(int[] arr, int first, int second) {
         int temp= arr[first];
         arr[first]= arr[second];
@@ -86,4 +87,45 @@ public class ArraySorting {
                 swap(arr, i, correctIndex);
         }
     }
+
+    static int[] MergeSort(int[] arr){
+        if(arr.length ==1)
+            return arr;
+
+        int mid= arr.length/2;
+        int[] l= MergeSort(Arrays.copyOfRange(arr, 0, mid)); //last value is exclusive
+        int[] r= MergeSort(Arrays.copyOfRange(arr, mid, arr.length));
+
+        //Merge the left & right sections
+        int[] merged= new int[l.length + r.length];
+        int i=0, j=0, k=0;
+        while(i<l.length && j<r.length){
+            if(l[i] < r[j]){
+                merged[k]= l[i];
+                i++;
+            }
+            else{
+                merged[k]= r[j];
+                j++;
+            }
+            k++;      
+        }
+        
+        //one array may end before another so just gotta add the remaining values to the merged[].
+        while(i<l.length){
+            merged[k]= l[i];
+            i++;
+            k++;
+        }
+        while(j<r.length){
+            merged[k]= r[j];
+            j++;
+            k++;
+        }
+
+        //merged
+        return merged;
+
+    }
+
 }
