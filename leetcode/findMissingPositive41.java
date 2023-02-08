@@ -8,7 +8,7 @@ public class findMissingPositive41 {
     }
     public static int firstMissingPositive(int[] nums) {
         int N= nums.length ;
-
+        String name= "luffy";
         int[] arr= new int[N+1];
         for(int i=0; i<N; i++){
             /*

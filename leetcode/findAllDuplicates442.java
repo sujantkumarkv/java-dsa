@@ -19,19 +19,14 @@ public class findAllDuplicates442 {
     }
 
     for(int j=0; j< N; j++){
-        if(arr[j] != j+1){
-            int correctIndex= arr[j] - 1;
-            if(arr[j] != arr[correctIndex])
-                swap(arr, j, correctIndex);
-            else 
-                ans.add(arr[j]);
-        }
-        else
-            continue;
+        if(arr[j] != j+1)
+        //after sorting now above, no need to swap, or see correctIndex, bcz 
+        //now which is just in the wrong position is the duplicate ones.
+            ans.add(arr[j]);
     }
-    return ans;
-  }
 
+    return ans;
+}
 
   static void swap(int[] arr, int first, int second) {
     int temp= arr[first];

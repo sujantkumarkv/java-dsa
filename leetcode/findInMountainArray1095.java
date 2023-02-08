@@ -4,6 +4,7 @@ package leetcode;
 public class findInMountainArray1095 {
     
     public int findMinIndex(int[] arr, int target) {
+    
         int s=0, e= arr.length-1;
         while(s!=e){ // searching in mountain array
             int middle= s+ (e-s)/2;
@@ -13,14 +14,16 @@ public class findInMountainArray1095 {
                 s= middle+1;
         }
         int peak= s;
+         /*
         int minIndex= BS(arr, 0, peak, target);
         if (minIndex== -1) 
             minIndex= BS(arr, peak, arr.length-1, target);
         
         return minIndex;
     }
-
-    public int BS(int start, int end, int target, MountainArray mountainArr){
+   
+     * 
+     * public int BS(int start, int end, int target, MountainArray mountainArr){
         boolean isAsc= MountainArray.get(start) < MountainArray.get(end);
         while(start<=end){
             int middle= start + (end-start) /2;
@@ -42,4 +45,7 @@ public class findInMountainArray1095 {
         }// while ends
         return -1;
     }
+     */
+    
+}
 }

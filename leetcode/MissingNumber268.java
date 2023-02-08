@@ -1,6 +1,5 @@
 package leetcode;
 import java.util.Arrays;
-import java.util.List;
 
 public class MissingNumber268 {
     public void main(String[] args) {
