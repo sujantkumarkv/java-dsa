@@ -97,6 +97,7 @@ public class ArraySorting {
         int[] r= MergeSort(Arrays.copyOfRange(arr, mid, arr.length));
 
         //Merge the left & right sections
+        //can use a diff function for this.
         int[] merged= new int[l.length + r.length];
         int i=0, j=0, k=0;
         while(i<l.length && j<r.length){
@@ -125,7 +126,6 @@ public class ArraySorting {
 
         //merged
         return merged;
-
     }
 
 }
