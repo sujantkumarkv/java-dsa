@@ -59,15 +59,8 @@ public class week2 {
             int u= sc.nextInt();
             arr.add(new int[]{l, u});
         }
-        /*
-        arr.add(0, new int[]{3, 23});
-        arr.add(1, new int[]{4, 20});
-        arr.add(2, new int[]{11, 16});
-        arr.add(3, new int[]{5, 19});
-        arr.add(4, new int[]{1, 25});
-         */
-        
         System.out.println(Arrays.toString(solve(arr)));
+        sc.close();
     }
 
     static int[] solve(ArrayList<int[]> arr){ 

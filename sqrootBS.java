@@ -1,8 +1,11 @@
 public class sqrootBS { 
     public static void main(String[] args) {
-       System.out.printf("%.3f" , sqroot(40, 3));
+       System.out.printf("%.3f" , sqrootNetwonRaphson(40));
     }
 
+
+    //APPROCH 1
+    ///////////////////////////////////////////////////////////////////////////////////
     public static double sqroot(int n, int precision){
         /**
          * I tried the below method of directly doing it within BinarySearch with the searching 
@@ -50,4 +53,31 @@ public class sqrootBS {
         System.out.println(loopCount);
         return root;
     }
+    ///////////////////////////////////////////////////////////////////////////////////
+
+
+
+    //APPROCH 2: Newton Raphson Method
+    ///////////////////////////////////////////////////////////////////////////////////
+
+    public static double sqrootNetwonRaphson(int N){
+        /*
+         * It works as the formula is root= 0.5 * (X + (N / X)); and
+         * given X=root, root=root is the soln, so it shall works, basically
+         * an iterative way to reduce the error to whatever precision we need.
+         */
+        double X= N, root=0.0;
+
+        while(true){
+            root= 0.5 * (X + (N / X));
+            double error= Math.abs(root - X);
+            if(error < 0.01)
+                break;
+
+            X= root;
+        }
+        return root;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////
 }
